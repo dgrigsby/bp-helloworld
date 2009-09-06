@@ -7,14 +7,14 @@
 #include <sstream>
 #include "bplus/bpservice.h"
 
-//using namespace bplus::service;
+using namespace bplus::service;
 
-class HelloWorld : public bplus::Service
+class HelloWorld : public Service
 {
 public:    
     BP_SERVICE( HelloWorld );
     
-	void greet( const bplus::Transaction& tran, const bplus::Map& args ) {
+	void greet( const Transaction& tran, const bplus::Map& args ) {
         std::stringstream ss;
         ss << "Hello, " << std::string(args["name"]) << "!";
         tran.complete( bplus::String( ss.str() ) );
