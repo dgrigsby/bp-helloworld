@@ -1,0 +1,32 @@
+how to build:
+
+OSX 
+ git submodule init
+ git submodule update
+ cd src
+ rm -rf build && mkdir build && cd build
+ cmake ..
+ make -j3
+
+OSX Xcode
+ git submodule init
+ git submodule update
+ cd src
+ rm -rf build && mkdir build && cd build
+ cmake -G "Xcode" ..
+ open HelloWorldService.xcodeproj
+
+Win32 VS08
+ git submodule init
+ git submodule update
+ cd src
+ md build
+ cd build
+ cmake -G "Visual Studio 9 2008" ..
+ open HelloWorldService.sln
+
+ 
+A dir HelloWorld should be generated which is your service ready to
+be installed using the BrowserPlus SDK:
+ 
+http://browserplus.yahoo.com/developer/service/sdk/
