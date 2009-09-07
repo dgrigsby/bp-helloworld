@@ -53,19 +53,10 @@ ENDIF ()
  
 INCLUDE_DIRECTORIES("${frameworkDir}/include")
 
-#SET(EXT_SRCS)
- 
 SET(SRCS service.cpp)
-#SET(HDRS)
- 
-# add required OS libs here
-#SET(OSLIBS)
  
 ADD_LIBRARY(${serviceName} MODULE ${SRCS})
 
-#SET(ADDL_LIBS)
-#TARGET_LINK_LIBRARIES(${serviceName} ${ADDL_LIBS} ${OSLIBS})
- 
 # create service directory
 FILE(MAKE_DIRECTORY ${outputDir})
  
@@ -81,6 +72,3 @@ IF (APPLE)
   ADD_CUSTOM_COMMAND(TARGET ${serviceName} POST_BUILD
                      COMMAND strip -x \"${outputDir}/${ServiceLibrary}\")
 ENDIF (APPLE)
-
- 
-#SETUP_CORELET_PUBLISHING(${coreletName})
