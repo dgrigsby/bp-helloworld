@@ -1,32 +1,49 @@
-how to build:
-
-OSX 
+Setup your local repo:
+ git clone git://github.com/dgrigsby/bp-helloworld.git
+ cd bp-helloworld
  git submodule init
- git submodule update
+ git submodule update  
+
+
+This project uses cmake for crossplatform builds.  Install cmake from cmake.org.
+
+Setup make/project files:
+[OSX - makefile]
  cd src
- rm -rf build && mkdir build && cd build
+ mkdir build
+ cd build
  cmake ..
- make -j3
 
-OSX Xcode
- git submodule init
- git submodule update
+[OSX - XCode]
  cd src
- rm -rf build && mkdir build && cd build
+ mkdir build
+ cd build
  cmake -G "Xcode" ..
- open HelloWorldService.xcodeproj
 
-Win32 VS08
- git submodule init
- git submodule update
+[Windows - VS08]
  cd src
- md build
+ mkdir build
  cd build
  cmake -G "Visual Studio 9 2008" ..
- open HelloWorldService.sln
+
+
+Build the project using generated makefile/.xcodeproj/.sln file
+
+
+Install the browserplus sdk for ServiceInstaller and ServiceRunner binaries:
+ http://browserplus.yahoo.com/developer/service/sdk/
+
+
+Publish service on your local system:
+ build> [path to ServiceInstaller]/ServiceInstaller -v -f HelloWorld
+
+
+Test the service: 
+ [path to ServiceRunner]/ServiceRunner HelloWorld 1.0.0
+ > desc
+ > a
+ > i greet '{"name":"World"}'
+ > q
+
 
  
-A dir HelloWorld should be generated which is your service ready to
-be installed using the BrowserPlus SDK:
- 
-http://browserplus.yahoo.com/developer/service/sdk/
