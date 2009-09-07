@@ -34,11 +34,11 @@ Install the browserplus sdk for ServiceInstaller and ServiceRunner binaries:
  http://browserplus.yahoo.com/developer/service/sdk/
 
 
-Publish service on your local system:
+Publish the service on your local system:
  build> [path to ServiceInstaller]/ServiceInstaller -v -f HelloWorld
 
 
-Test the service: 
+Test the service with the ServiceRunner app: 
  [path to ServiceRunner]/ServiceRunner HelloWorld 1.0.0
  > desc
  > a
@@ -46,4 +46,5 @@ Test the service:
  > q
 
 
- 
+Test the service from a browser:
+ http://browserplus.yahoo.com/developer/explore/test/
