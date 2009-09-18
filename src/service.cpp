@@ -5,7 +5,7 @@
 // services.
 //
 #include <sstream>
-#include "bplus/bpservice.h"
+#include "bpservice/bpservice.h"
 
 using namespace bplus::service;
 
